@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
+import { EAMListComponent } from './home/eamlist/eamlist.component';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'HACKATHONPROJ';
+  public extractedFilter:String;
+  onChildFilterChange(filter:String)
+  {
+    this.extractedFilter=filter;
+  }
 }

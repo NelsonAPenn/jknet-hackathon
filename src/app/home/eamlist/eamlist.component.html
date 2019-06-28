@@ -1,0 +1,45 @@
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'> 
+<link rel='stylesheet' href = 'https://08devagbasp1a.inside.ams1907.com/UIPROTOTYPE/AFF/Glance/Specs/assets/Operations/package@1x.svg'>
+
+<!-- <div class="EamContainer">  <br>          
+    <table class="table-bordered">
+      <thead>
+        <tr>
+          <th id="hubCamLabel" style="font-size: 150%">&nbsp;<span style="color:green"class='fa fa-plane'></span>&nbsp;<strong>In-Bound Aircraft: {{ samplePackage.inbound.flightNumber }} </strong></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td id= "hubCamProcess" style="text-align: left; font-size: 125%">&nbsp;<strong><span style="color:green"class='fa fa-archive'></span>&nbsp; Find ULD: {{ testOutput }}</strong><br>
+          </td>        
+        </tr>
+        <tr>
+          <td style="text-align: left">
+            <strong style="color: #4A4A4A; font-family: 'Segoe UI'; font-size: 20px">Critical EAM Packages: <br> {{ samplePackage.trackNum }}</strong>
+            <br>  
+          </td>
+        </tr>
+      </tbody>
+    </table>
+</div> -->
+<br>
+<div *ngFor='let package of packages$ | async' style="text-align:center; padding-top: 10px">
+  <table class="table-bordered">
+    <thead>
+      <tr>
+      <th id="hubCamLabel" style="font-size: 150%">&nbsp;<span style="color:green"class='fa fa-plane'></span>&nbsp;<strong>In-Bound Aircraft: {{package.inbound.flightNumber}}</strong></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td id= "hubCamProcess" style="text-align: left; font-size: 125%">&nbsp;<strong><span style="color:green"class='fa fa-inbox'></span>&nbsp; Find ULD: {{package.uld}} </strong><br>
+        </td>        
+      </tr>
+      <tr>
+        <td style="text-align: left">
+          <strong style="color: #4A4A4A; font-family: 'Segoe UI'; font-size: 20px">Critical EAM Packages: <br> Retrieve Package: {{ package.trackingNumber }} Take Package to: {{ package.outbound.gateway }} ,{{ package.outbound.parkingLocationString }} Time Remaining: </strong> 
+        </td>
+      </tr>
+    </tbody>
+  </table>
