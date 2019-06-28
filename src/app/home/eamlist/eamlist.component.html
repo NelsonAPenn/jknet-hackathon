@@ -24,7 +24,7 @@
     </table>
 </div> -->
 <br>
-<div *ngFor='let package of packages$ | async' style="text-align:center; padding-top: 10px">
+<!----div *ngFor='let package of packages$ | async' style="text-align:center; padding-top: 10px">
   <table class="table-bordered">
     <thead>
       <tr>
@@ -42,4 +42,35 @@
         </td>
       </tr>
     </tbody>
-  </table>
+  </table-->
+  <div *ngFor='let flight of flights$ | async' style="text-align:left; padding-top: 5px">
+    <table class="table-bordered">
+      <thead>
+        <tr>
+        <th id="hubCamLabel" style="font-size: 150%">&nbsp;<span style="color: black"class='fa fa-plane'></span>&nbsp;<strong>In-Bound Aircraft: {{flight.gateway}} {{flight.flightNumber}} &nbsp;&nbsp;at &nbsp;&nbsp;  Ramp Position: {{flight.parkingLocationString}}</strong></th>
+        </tr>
+      </thead>
+      <div *ngIf='flight.ulds !== null'>
+        <div *ngFor='let uld of flight.ulds'>
+        <tr *ngIf='uld'>
+          <br>
+          <h4> <span style="color: black"class='fa fa-archive'></span>&nbsp;Find ULD: <strong>{{uld.uldNumber}}</strong></h4>     
+        </tr>
+        <div *ngIf='uld && uld.packages !== null'>
+        <tr *ngFor='let package of uld.packages'>
+          <td style="text-align: left">
+            <h4 style="color: #4A4A4A; font-family: 'Segoe UI'; font-size: 20px">&nbsp;Retrieve Package: <strong>{{ package.trackingNumber }}</strong>&nbsp;<span class='fa fa-box'></span>
+               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: black"class='fas fa-arrow-right'></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Take Package to: <strong>{{ package.outbound.gateway }},{{ package.outbound.parkingLocationString }}&nbsp;</strong>
+               <span style="color:black"class='fa fa-plane'></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: black"class='fas fa-arrow-right'></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Time Remaining: <strong>{{package.outbound.loadTime - package.inbound.estimatedOnblockTime}}</strong>
+               &nbsp;<span style="color:black"class='far fa-clock'></span></h4> 
+          </td>
+        </tr>
+        </div>
+      </div>
+      </div>
+    </table>
+  </div>
+  
+  
+
+

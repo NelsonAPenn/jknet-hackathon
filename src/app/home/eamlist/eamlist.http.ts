@@ -1,6 +1,8 @@
-import { Pkg } from './package.model';
+import { Pkg, Flight } from './package.model';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import 'rxjs/add/operator/map';
 
 @Injectable({
 providedIn: 'root'
@@ -13,6 +15,7 @@ export class HttpService {
 
     // Get request packages from the server
     getPackage(filter) {
-      return this._http.post<Pkg[]>(this.apiUrl, {inboundWing:filter});
+      return this._http.post<Flight[]>(this.apiUrl, {inboundWing:filter} )
+
     }
 }  

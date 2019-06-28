@@ -10,20 +10,18 @@
 
 .shieldLogo{
     position: absolute;
-    left:auto;
     top: 0%;
     left: 0%;
 }
 
 .navbar-text {
     position: absolute;
-    padding-top: 0%;
-    padding-bottom: 5%;
-    font-size: 27px;
+    top: 5%;
+    font-size: 19px;
     color: white;
     font-family: 'Segoe UI', sans-serif;
     text-align: center;
-    line-height: 1.5;
+    line-height: 1;
 }
 
 .container-fluid {
@@ -32,6 +30,64 @@
 
 .navbar-expand .navbar-nav .dropdown-menu {
     margin-top: 0px;
+}
+
+.dropdown-toggle.dropdown-button {
+    color: white;
+    padding-top: 0px;
+    padding-left: 0px;
+    margin-right: 0px;
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 18px;
+}
+
+.dropdown-toggle.dropdown-button:active {
+    color: white;
+    padding-top: 0px;
+    margin-right: 0px;
+    background-color: transparent;
+}
+
+.dropdown-toggle.dropdown-button:hover {
+    color: white;
+    padding-top: 0px;
+    margin-right: 0px;
+    background-color: transparent;
+}
+
+.dropdown-toggle.dropdown-button:focus {
+    color: white;
+    padding-top: 0px;
+    margin-right: 0px;
+    background-color: transparent;
+}
+
+.dropdown.open .dropdown-toggle.dropdown-button {
+    color: white;
+    padding-top: 0px;
+    margin-right: 0px;
+    background-color: transparent;
+}
+
+.dropdown.open .dropdown-toggle.dropdown-button:hover {
+    color: white;
+    padding-top: 0px;
+    margin-right: 0px;
+    background-color: transparent;
+}
+
+.dropdown.open .dropdown-toggle.dropdown-button:active {
+    color: white;
+    padding-top: 0px;
+    margin-right: 0px;
+    background-color: transparent;
+}
+
+.dropdown.open .dropdown-toggle.dropdown-button:focus {
+    color: white;
+    padding-top: 0px;
+    margin-right: 0px;
+    background-color: transparent;
 }
 
 .form-inline{
@@ -47,11 +103,12 @@
 .flex-container{
     display: flex;
     flex-wrap: nowrap;
-    line-height: 2;
+    line-height: 1;
 }
 
-.absolute {
-    position: absolute;
-    top: 0px;
-    right: 0;
+.absolute {
+    position: absolute;
+    top: 0px;
+    right: 0;
 } 
+

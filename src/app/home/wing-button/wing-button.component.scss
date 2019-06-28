@@ -1,10 +1,19 @@
-.btn-primary {
+.btn {
     color: #FCB900;
     background-color: #644117;
-    border-color: #000000;
+    border-color: #644117;
     border-width: 3px;
     position: absolute;
-    
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 25px;
+    top: 5%;
     width: 80%;
-    left: 10%;
+    left: 7%;
+    cursor: pointer;
+}
+.active, .btn:hover, .btn:focus{
+    background-color: #412a0d;
+    color:white;
+    border-color: #412a0d;
+
 }

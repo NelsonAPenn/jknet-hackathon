@@ -1,7 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { HttpService} from './EAMList.http';
-import { Pkg } from './package.model';
+import { Pkg, Flight } from './package.model';
 import { Observable } from 'rxjs';
+import 'rxjs/add/operator/map';
 
 @Component({
   selector: 'app-eamlist',
@@ -10,7 +11,7 @@ import { Observable } from 'rxjs';
 })
 export class EAMListComponent implements OnInit {
 
-  packages$ : Observable<Pkg[]>;
+  flights$ : Observable<Flight[]>;
   @Input() inputFilter:String;
 
   constructor(private dataService: HttpService) {
@@ -26,14 +27,18 @@ export class EAMListComponent implements OnInit {
 
   refresh()
   {
-  this.packages$ = this.dataService.getPackage(this.inputFilter || "A");
+    this.flights$ = this.dataService.getPackage(this.inputFilter || "A");
   }
   ngOnChanges()
   {
     this.refresh()
   }
   ngOnInit() {
-    this.packages$ = this.dataService.getPackage(this.inputFilter || "A");
+    this.flights$ = this.dataService.getPackage(this.inputFilter || "A");
+    setInterval(() => {
+      this.refresh();
+    }, 10000);
+    console.log(this.flights$)
   }
 
 }
