@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 56 56" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.3 (51167) - http://www.bohemiancoding.com/sketch -->
+    <title>Locations/SelectedCenter</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <circle id="path-1" cx="20" cy="20" r="20"></circle>
+    </defs>
+    <g id="Locations/SelectedCenter" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Hub" transform="translate(8.000000, 8.000000)">
+            <g id="Oval">
+                <use fill="#351D13" fill-rule="evenodd" xlink:href="#path-1"></use>
+                <circle stroke="#2196F3" stroke-width="8" cx="20" cy="20" r="24"></circle>
+            </g>
+        </g>
+        <path d="M36,24.791548 L36,27.8848305 L36,33.7696611 L33.8303274,33.7696611 L33.8303274,27.5763759 L29.0036496,27.5763759 L29.0036496,33.7374044 L26.9392212,33.7374044 L26.9392212,27.5763759 L22.0644284,27.5763759 L22.0644284,27.8848305 L22.0331492,27.8848305 L22.0331492,33.7696611 L20,33.7696611 L20,24.791548 L36,24.791548 Z M36,23.4152624 L20,23.4152624 L20,22 L36,22 L36,23.4152624 Z M31.5707725,31.9975041 L33.2911295,31.9975041 L33.2911295,33.8469901 L31.5707725,33.8469901 L31.5707725,31.9975041 Z M30.5385583,29.8729664 L32.2589153,29.8729664 L32.2589153,31.7224523 L30.5385583,31.7224523 L30.5385583,29.8729664 Z M29.5063441,31.9975041 L31.2267011,31.9975041 L31.2267011,33.8469901 L29.5063441,33.8469901 L29.5063441,31.9975041 Z" id="Combined-Shape" fill="#FFFFFF" fill-rule="nonzero"></path>
+    </g>
+</svg>

@@ -3,6 +3,7 @@ import { HttpService} from './EAMList.http';
 import { Pkg, Flight } from './package.model';
 import { Observable } from 'rxjs';
 import 'rxjs/add/operator/map';
+import { getLocaleDateTimeFormat } from '@angular/common';
 
 @Component({
   selector: 'app-eamlist',
@@ -13,6 +14,28 @@ export class EAMListComponent implements OnInit {
 
   flights$ : Observable<Flight[]>;
   @Input() inputFilter:String;
+
+  getTimeInMinutes(p:Pkg){
+  
+    var rawMinutes = Math.floor((p.outbound.loadTime - Date.now())/1000/60) + 5 * 24 * 60 -(12*60)+3;
+    var minutes = rawMinutes % 60;
+    var hours = Math.floor(rawMinutes - minutes)/60;
+    var output = hours +'h'+minutes+'m';//add constant to look at dates in the past
+    // var color = ";"
+    // if(hours < 1 && minutes <= 15){
+    //   color =  "red";
+    // }
+    // else if (hours < 1 && minutes <= 30)
+    // {
+    //   color =  "yellow";
+    // }
+    // else
+    // {
+    //   color = "green";
+    // }
+    // document.getElementById("timeRemaining").innerHTML = "<strong id= 'timeRemaining' style=color:"+color+">""</strong>";
+    return output;
+  }
 
   constructor(private dataService: HttpService) {
     this.inputFilter="A";

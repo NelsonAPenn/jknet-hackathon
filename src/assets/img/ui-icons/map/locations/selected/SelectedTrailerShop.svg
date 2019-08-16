@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 56 56" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.3 (67297) - http://www.bohemiancoding.com/sketch -->
+    <title>Locations/SelectedTrailerShop</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M1.995,21.945 L1.995,5.985 L11.47125,0.9975 L20.9475,5.985 L20.9475,21.945 L1.995,21.945 Z M17.2927026,16.4836479 L12.7540776,11.9450229 C13.2029526,10.7978979 12.9535776,9.45127295 12.0059526,8.50364795 C11.0084526,7.50614795 9.51220262,7.30664795 8.31520262,7.85527295 L10.4598276,9.99989795 L8.96357762,11.4961479 L6.76907762,9.35152295 C6.17057762,10.5485229 6.41995262,12.0447729 7.41745262,13.0422729 C8.36507762,13.9898979 9.71170262,14.2392729 10.8588276,13.7903979 L15.3974526,18.3290229 C15.5969526,18.5285229 15.8962026,18.5285229 16.0957026,18.3290229 L17.2428276,17.1818979 C17.4922026,16.9823979 17.4922026,16.6332729 17.2927026,16.4836479 Z" id="path-1"></path>
+    </defs>
+    <g id="Custom-Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Icons" transform="translate(-1172.000000, -200.000000)">
+            <g id="Locations/SelectedTrailerShop" transform="translate(1180.000000, 208.000000)">
+                <circle id="Oval-Copy" stroke="#2196F3" stroke-width="8" fill="#351D13" cx="20" cy="20" r="24"></circle>
+                <g id="Map/Ups/hangar" transform="translate(8.000000, 8.000000)">
+                    <polygon id="bounds" points="0 0 23.94 0 23.94 23.94 0 23.94"></polygon>
+                    <mask id="mask-2" fill="white">
+                        <use xlink:href="#path-1"></use>
+                    </mask>
+                    <use fill="#212121" fill-rule="evenodd" xlink:href="#path-1"></use>
+                    <g id="-Color-/-contrast-White" mask="url(#mask-2)" fill="#FFFFFF" fill-rule="evenodd">
+                        <g transform="translate(0.000000, -0.000000)" id="color">
+                            <rect x="0" y="0" width="23.88015" height="23.88015"></rect>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

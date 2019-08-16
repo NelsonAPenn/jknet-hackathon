@@ -4,27 +4,27 @@ export interface Pkg {
     lastUpdated: Number;//name of package to be displayed
     _id: String;
     trackingNumber:String;
-    expectedTime:Number;
-    expectedManualTime:Number;
-    manualProcessTime:Number;
-    remainingTime:Number;
-    sortTime:Number;
+    expectedTime:number;
+    expectedManualTime:number;
+    manualProcessTime:number;
+    remainingTime:number;
+    sortTime:number;
     manuallyProcess:true;
     uld:String;
     inbound: Inbound;
-    outboud: Outbound;
+    outbound: Outbound;
 }
 
 export interface Inbound
 {
     flightNumber:String;
     gateway:String;
-    estimatedOnblockTime:Number;
+    estimatedOnblockTime:number;
     parkingWing:String;
     parkingRamp:String;
     parkingPosition:String;
     parkingLocationString:String;
-    unloadTime:Number;
+    unloadTime:number;
 }
 export interface Outbound
 {
@@ -33,8 +33,8 @@ export interface Outbound
     parkingRamp:String;
     parkingPosition:String;
     parkingLocationString:String;
-    pullTime:Number;
-    loadTime:Number;
+    pullTime:number;
+    loadTime:number;
 }
 
 export interface Flight

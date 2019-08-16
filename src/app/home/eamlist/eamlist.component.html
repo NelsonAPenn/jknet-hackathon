@@ -2,66 +2,28 @@
 <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'> 
 <link rel='stylesheet' href = 'https://08devagbasp1a.inside.ams1907.com/UIPROTOTYPE/AFF/Glance/Specs/assets/Operations/package@1x.svg'>
 
-<!-- <div class="EamContainer">  <br>          
-    <table class="table-bordered">
-      <thead>
-        <tr>
-          <th id="hubCamLabel" style="font-size: 150%">&nbsp;<span style="color:green"class='fa fa-plane'></span>&nbsp;<strong>In-Bound Aircraft: {{ samplePackage.inbound.flightNumber }} </strong></th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td id= "hubCamProcess" style="text-align: left; font-size: 125%">&nbsp;<strong><span style="color:green"class='fa fa-archive'></span>&nbsp; Find ULD: {{ testOutput }}</strong><br>
-          </td>        
-        </tr>
-        <tr>
-          <td style="text-align: left">
-            <strong style="color: #4A4A4A; font-family: 'Segoe UI'; font-size: 20px">Critical EAM Packages: <br> {{ samplePackage.trackNum }}</strong>
-            <br>  
-          </td>
-        </tr>
-      </tbody>
-    </table>
-</div> -->
 <br>
-<!----div *ngFor='let package of packages$ | async' style="text-align:center; padding-top: 10px">
-  <table class="table-bordered">
-    <thead>
-      <tr>
-      <th id="hubCamLabel" style="font-size: 150%">&nbsp;<span style="color:green"class='fa fa-plane'></span>&nbsp;<strong>In-Bound Aircraft: {{package.inbound.flightNumber}}</strong></th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td id= "hubCamProcess" style="text-align: left; font-size: 125%">&nbsp;<strong><span style="color:green"class='fa fa-inbox'></span>&nbsp; Find ULD: {{package.uld}} </strong><br>
-        </td>        
-      </tr>
-      <tr>
-        <td style="text-align: left">
-          <strong style="color: #4A4A4A; font-family: 'Segoe UI'; font-size: 20px">Critical EAM Packages: <br> Retrieve Package: {{ package.trackingNumber }} Take Package to: {{ package.outbound.gateway }} ,{{ package.outbound.parkingLocationString }} Time Remaining: </strong> 
-        </td>
-      </tr>
-    </tbody>
-  </table-->
-  <div *ngFor='let flight of flights$ | async' style="text-align:left; padding-top: 5px">
-    <table class="table-bordered">
+<div>
+  <div *ngFor='let flight of flights$ | async' style="text-align:left;">
+    <table class="table-bordered" style="position:relative; margin-bottom:2%;">
       <thead>
         <tr>
-        <th id="hubCamLabel" style="font-size: 150%">&nbsp;<span style="color: black"class='fa fa-plane'></span>&nbsp;<strong>In-Bound Aircraft: {{flight.gateway}} {{flight.flightNumber}} &nbsp;&nbsp;at &nbsp;&nbsp;  Ramp Position: {{flight.parkingLocationString}}</strong></th>
+        <th id="hubCamLabel" style="font-size: 22px; color: black">&nbsp;<span class='fa fa-plane'></span>&nbsp;<strong>In-Bound Aircraft: {{flight.gateway}} {{flight.flightNumber}} &nbsp;&nbsp;at &nbsp;&nbsp;  Ramp Position: {{flight.parkingLocationString}}</strong></th>
         </tr>
       </thead>
       <div *ngIf='flight.ulds !== null'>
         <div *ngFor='let uld of flight.ulds'>
         <tr *ngIf='uld'>
           <br>
-          <h4> <span style="color: black"class='fa fa-archive'></span>&nbsp;Find ULD: <strong>{{uld.uldNumber}}</strong></h4>     
+          <h4 style="color: black; font-size: 22px"> <span class='fa fa-archive'></span>&nbsp;Find ULD: <strong>{{uld.uldNumber}}</strong></h4>     
         </tr>
         <div *ngIf='uld && uld.packages !== null'>
         <tr *ngFor='let package of uld.packages'>
           <td style="text-align: left">
-            <h4 style="color: #4A4A4A; font-family: 'Segoe UI'; font-size: 20px">&nbsp;Retrieve Package: <strong>{{ package.trackingNumber }}</strong>&nbsp;<span class='fa fa-box'></span>
-               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: black"class='fas fa-arrow-right'></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Take Package to: <strong>{{ package.outbound.gateway }},{{ package.outbound.parkingLocationString }}&nbsp;</strong>
-               <span style="color:black"class='fa fa-plane'></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: black"class='fas fa-arrow-right'></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Time Remaining: <strong>{{package.outbound.loadTime - package.inbound.estimatedOnblockTime}}</strong>
+            <h4 style=" color:black; font-family: 'Segoe UI'; font-size: 22px">&nbsp;Retrieve Package: <strong>{{ package.trackingNumber }}</strong>&nbsp;<span style="color: black" class='fa fa-cube'></span>
+               &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: black"class='fas fa-arrow-right'></span>&nbsp;&nbsp;&nbsp;&nbsp;Take Package to: <strong>{{ package.outbound.gateway }},{{ package.outbound.parkingLocationString }}&nbsp;</strong>
+               <span style="color:black"class='fa fa-plane'></span>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: black"class='fas fa-arrow-right' id = "timeColor"></span>&nbsp;&nbsp;&nbsp;&nbsp;Time Remaining:
+                <strong id= "timeRemaining" style="color:green;">{{getTimeInMinutes(package)}}</strong>
                &nbsp;<span style="color:black"class='far fa-clock'></span></h4> 
           </td>
         </tr>
@@ -70,7 +32,7 @@
       </div>
     </table>
   </div>
-  
+  </div>
   
 
 

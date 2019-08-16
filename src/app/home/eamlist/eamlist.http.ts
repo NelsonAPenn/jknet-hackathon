@@ -9,7 +9,7 @@ providedIn: 'root'
 })
 
 export class HttpService {
-    apiUrl = 'http://169.254.8.64:3002/getAllPackageInfo';
+    apiUrl = 'http://169.254.160.34:3002/getAllPackageInfo';
 
     constructor(private _http: HttpClient) { }
 

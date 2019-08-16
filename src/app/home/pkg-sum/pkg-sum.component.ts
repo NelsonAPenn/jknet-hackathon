@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./pkg-sum.component.scss']
 })
 export class PkgSumComponent implements OnInit {
-
+  totCount = 5;
   constructor() { }
 
   ngOnInit() {
